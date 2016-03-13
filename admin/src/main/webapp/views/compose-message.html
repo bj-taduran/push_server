@@ -1,0 +1,58 @@
+<div class="content" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <div class="alert alert-{{response.status}}" ng-show="response.msg != ''">{{response.msg}}</div>
+    <div class="app-page-title">Compose Message</div>
+    <div>
+        <form name="composeform" ng-submit='sendMessage()'>
+            <fieldset>
+                <label>Title:</label>
+                <div><input type="text" ng-model="message.title" ng-required="true"></div>
+                <label>Message:</label>
+                <div><textarea ng-model="message.details" maxlength="256" ng-required="true"></textarea></div>
+                <label>Channel:</label>
+                <ul class='unstyled'>
+                    <li>
+                        <input type="checkbox" ng-model="message.channels" disabled ng-true-value="iOS" ng-false-value="">
+                        <span>iOS</span>
+                    </li>
+                </ul>
+                <label>Recipients:</label>
+                <div >
+                    <ul class='unstyled'>
+                        <li>
+                            <input type="radio" ng-model="message.recipientType" value="Broadcast" name="recipientType" checked ng-click="clearRecipients()"><span>&nbsp;Broadcast</span>
+                        </li>
+                        <li>
+                            <input type="radio" name="recipientType" ng-model="message.recipientType" value="Specific"><span>&nbsp;Specific</span>
+                        </li>
+                    </ul>
+
+                    <div ng-show="message.recipientType == 'Specific'" >
+                        <input type="button" class="btn push-btn field" value="Choose Recipients" ng-click="showRecipientsPanel()"/>
+                        <span ng-show="message.recipientIds.length != ''" >
+                            <ng-pluralize count="message.recipientIds.length"
+                                          when="{ 'one': 'You have {{message.recipientIds.length}} recipient selected.',
+                                                  'other': 'You have {{message.recipientIds.length}} recipients selected.'}"></ng-pluralize>
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <label>Deliver:</label>
+                    <ul class='unstyled'>
+                        <li>
+                            <input type="radio" value="Now" ng-model="message.deliveryType" name="deliveryType"  checked></span>&nbsp;Now</span>
+                        </li>
+                        <li>
+                            <input type="radio" ng-model="message.deliveryType" name="deliveryType"  value="Schedule" disabled></span>&nbsp;Schedule</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="field">
+                    <input type="button" class="btn cancel" ng-click="onCancel()" value='Cancel'>
+                    <input type="submit" class="btn push-btn" value="Send" />
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<div ng-include src='"views/choose-recipients.html"' ng-controller="recipientsController"/>

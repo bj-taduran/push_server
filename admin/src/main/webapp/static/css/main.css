@@ -1,0 +1,244 @@
+/*********************Colour reference chart****************
+Light Grey - #e4e4e4
+
+Dark Grey - #a5a5a5
+
+Green - #c9da2d
+
+
+/*********************Font Information****************
+
+Face: Helvetica
+
+Weights: Light & Roman
+
+*/
+
+/*common*/
+html, body {
+    height: 100%;
+
+}
+
+
+
+.app-page-title {
+    color:#c9da2d;
+    font-weight:lighter;
+    height:40px;
+    font-size:30px;
+    margin-top:20px;
+    margin-left: 20px;
+    font-family:Helvetica;
+}
+
+label{
+    width: 10em;
+    float: left;
+    text-align: right;
+    margin-right: 0.5em;
+    display: block;
+    color: #a5a5a5;
+    font-family: helvetica;
+    vertical-align: baseline;
+}
+
+input, div, a, select{
+    vertical-align: baseline;
+}
+
+input{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.field{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10em;
+}
+
+
+
+.push-btn {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #c9da2d;
+    *background-color: #c9da2d;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c9da2d),
+    to(#c9da2d) );
+    background-image: -webkit-linear-gradient(top, #c9da2d, #c9da2d);
+    background-image: -o-linear-gradient(top, #c9da2d, #c9da2d);
+    background-image: linear-gradient(to bottom, #c9da2d, #c9da2d);
+    background-image: -moz-linear-gradient(top, #c9da2d, #c9da2d);
+    background-repeat: repeat-x;
+    border-color: #c9da2d #c9da2d #c9da2d;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fffbb450',
+    endColorstr='#fff89406', GradientType=0 );
+    filter: progid:dximagetransform.microsoft.gradient(enabled=false );
+}
+.push-btn:hover,.push-btn:active,.push-btn.active,.push-btn.disabled,.push-btn[disabled]
+{
+    color: #fff;
+    background-color: #c9da2d;
+    *background-color: #c9da2d;
+}
+
+.push-btn:active,.push-btn.active {
+    background-color: #c9da2d;
+}
+
+/*login page*/
+.login-btn-addl {
+    float:right;
+    width:110px !important;
+    margin-top:30px;
+}
+.login-header {
+    color:#c9da2d;
+    font-weight:lighter;
+    height:40px;
+    font-size:30px;
+    margin-top:20px;
+    font-family:Helvetica;
+}
+.login-panel {
+    width:330px;
+    margin-left:-200px;
+}
+.login-username {
+    margin-right:8px;
+}
+.login-password {
+    margin-right:11px;
+}
+
+/*create app page*/
+/*check box color selector*/
+.done-true {
+    color: black;
+}
+.done-false {
+    color: grey;
+}
+#checkboxes label {
+    float: left;
+}
+#checkboxes ul {
+    margin: 0;
+    list-style: none;
+    float: left;
+}
+#certification {
+    padding-bottom:5px;
+}
+.create-app{
+    width:450px;
+}
+
+/*choose-recipients*/
+.choose-recipients{
+    width:600px;
+}
+
+.recipient-type{
+    width:15%;
+}
+
+.search-criteria{
+    width:67%;
+}
+
+
+.left-float{
+    float:left;
+}
+
+.tag-selection{
+    height: 250px;
+    max-height: 250px;
+    min-height: 250px;
+    line-height: 250px;
+}
+
+.middle{
+    display:inline-block;
+    padding-left: 15px;
+    padding-top: 40px;
+}
+
+.right-float{
+    float:right;
+}
+
+.action-btn {
+    width:100px !important;
+}
+
+.search-btn{
+    vertical-align: baseline !important;
+}
+
+
+.wrapper {
+    min-height: 100%;
+}
+.footer {
+    position: relative;
+    margin-top: -150px;
+    margin-left: 20px;
+    height: 150px;
+    clear:both;
+    padding-top:20px;
+    font-size:-4em;
+}
+.push-title-header {
+    display: block;
+    float: left;
+    padding: 15px 10px 0px;
+    margin-left: -20px;
+    font-size: 30px;
+    color: #777;
+}
+.app-dropdown {
+    padding: 15px 10px 0px;
+}
+.welcome {
+    font-size:14px !important;
+}
+/* app details */
+
+
+
+
+.sidebar-images {
+    align: left;
+    margin-right: 10px;
+}
+.app-details-title {
+    height: 50px;
+    font-size: 30px;
+    float: left;
+    color: #c9da2d !important;
+}
+.app-details-question-mark {
+    float: right;
+    background-color: #c9da2d !important;
+}
+.app-details-field {
+    text-align: right !important;
+    width: 150px;
+}
+.app-details-value {
+    text-align: left;
+    font-weight: bold;
+}
+/* temporary */
+.temp-active {
+    background-color: #0099dd;
+    color: #ffffff;
+}
+.temp-container-top-margin {
+    margin-top: 100px;
+}

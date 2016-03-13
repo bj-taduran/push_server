@@ -1,0 +1,50 @@
+<div class="create-app" modal="createAppModal" close="close()">
+    <div class="content">
+        <div class="app-page-title">Create an app...</div>
+        <div class="modal-body">
+            <div class="alert alert-error" ng-show="showPageError">{{error.pageerror}}</div>
+            <form name="createAppForm" ng-submit="saveUpload()">
+                <fieldset>
+                    <div class="clearfix">
+                        <label>Application Name</label>
+                        <input type="text" ng-model="application.name" ng-required="true" autofocus="true">
+                        <br/><span class="text-error">{{data.name}}</span>
+                    </div>
+                    <div>
+                        <label>Mode</label>
+                        <select ng-model="modeId"
+                                ng-options="item.modeId as item.modeName for item in modeItems"></select>
+                    </div>
+                    <div>
+                        <label>Channel:</label>
+                        <ul class="unstyled">
+                            <input type="checkbox" ng-model="application.channels" disabled ng-true-value="iOS" ng-false-value="">
+                            <span>iOS</span>
+                        </ul>
+                    </div>
+                    <div class="clearfix">
+
+                        <label>Apple Certificate</label>
+                        <!-- file upload here-->
+                        <input type="file" id="certification" class="" name="certification" ng-required="true"/>
+                        <!--end of file upload here-->
+                    </div>
+                    <div class="clearfix">
+                        <div>
+                            <label>Password</label><input type="password" ng-model="pass.password" ng-required="true"/>&nbsp;<span
+                                class="text-error">{{passwordError}}</span>
+                        </div>
+                        <div>
+                            <label>Confirm Password</label><input type="password" ng-model="pass.confirmpassword"
+                                                                  ng-required="true"/>
+                        </div>
+                    </div>
+                    <div class="clearfix pull-right">
+                        <input type="button" ng-click="onclose()" class="btn cancel" value="Cancel"/>
+                        <input type="submit" class="btn push-btn" value="Create"/>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div modal="loginPanel" class="login-panel" close="close()">
+    <div class="modal-header login-header">
+        Please log in...
+    </div>
+    <div class="modal-body" >
+        <!-- error impementation on js to be taken care of adrian or jeff RDBFU-163 -->
+        <div class="alert alert-error" ng-show="loginError">{{loginError}}</div>
+        <!-- end of error message container-->
+        <form ng-submit="login()">
+            <fieldset>
+                <div class="clearfix">
+                    <span class="muted login-username">Username </span><input ng-required="true" type="text" ng-model="user.name" name="username" autofocus="true">
+                </div>
+                <div class="clearfix">
+                    <span class="muted login-password">Password </span><input ng-required="true" type="password" ng-model="user.password" name="password">
+                </div>
+            </fieldset>
+            <input type="submit" class="btn push-btn login-btn-addl" value="Login"/>
+        </form>
+    </div>
+</div>

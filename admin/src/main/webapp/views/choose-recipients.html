@@ -1,0 +1,48 @@
+<div class="choose-recipients"   modal="chooseRecipientsPanel" close="javascript:void(0);">
+    <div class="modal-header">
+        <h2 class="app-page-title">Choose recipients</h2>
+    </div>
+    <div class="modal-body" ng-init="searchRecipients()" >
+            <fieldset>
+                <div>
+                    <form ng-submit="searchRecipients()">
+                        <select class='recipient-type' name="recipientType" tabindex="1">
+                            <option ng-model="recipient.searchType"  value="TAG" selected="selected">Tags</option>
+                        </select>
+                        <input class="search-criteria" type="text" ng-model="recipient.searchKey" name="recipientKey" placeholder="Enter Search Criteria"/>
+                        <input type="submit" class="btn push-btn search-btn" value="search"/>
+                    </form>
+                </div>
+
+                <div id="container">
+                    <div class="left-float">
+                        <div>Available Tags:</div>
+                        <select class="tag-selection" ng-model="recipient.availableTags" multiple="multiple" size="15"
+                                ng-options="availableTag.id as availableTag.name for availableTag in availableTags">
+                        </select>
+
+                    </div>
+                    <div class="middle">
+                        <input type="button" class="btn action-btn" value="Add" ng-click="addRecipients()" />
+                        <br/><br/>
+                        <input type="button" class="btn action-btn" value="Add All" ng-click="addAllRecipients('')" />
+                        <br/><br/>
+                        <input type="button" class="btn action-btn" value="Remove" ng-click="removeRecipients()" />
+                        <br/><br/>
+                        <input type="button" class="btn action-btn" value="Remove All" ng-click="removeAllRecipients()" />
+                    </div>
+                    <div class="right-float">
+                        <div>Selected Tags:</div>
+                        <select class="tag-selection" ng-model="recipient.selectedTags" multiple="multiple" size="15"
+                                ng-options="selectedTag.id as selectedTag.name for selectedTag in selectedTags">
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+    </div>
+    <div class="modal-footer">
+        <input type="button" class="btn cancel" value="Cancel" ng-click="cancelSelection();hideRecipientsPanel();"/>
+        <input type="button" class="btn push-btn cancel" value="Done" ng-click="saveRecipients();hideRecipientsPanel();"/>
+    </div>
+
+</div>

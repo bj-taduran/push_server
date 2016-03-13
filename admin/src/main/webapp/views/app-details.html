@@ -1,0 +1,39 @@
+<!--TODO: revisit if moving alert to template.html is more appropriate.-->
+<div ng-controller="AlertCtrl" ng-show="showCreatedAppAlert">
+    <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+</div>
+<h2 class="app-page-title">App Details</h2>
+<div class="app-details-question-mark label">?</div>
+
+<div ng-hide="currentApplication">
+    <span>You do not have any application yet.</span><br/>
+    <a href='#/app/create' class="btn push-btn">Create Application</a>
+</div>
+
+<table class="table" ng-show="currentApplication">
+    <tbody>
+    <tr>
+        <td class="app-details-field">App Name</td>
+        <td class="app-details-value">{{currentApplication.name}}</td>
+    </tr>
+    <tr>
+        <td class="app-details-field">Mode</td>
+        <td class="app-details-value">{{currentApplication.mode}}</td>
+    </tr>
+    <tr>
+        <td class="app-details-field">Channels</td>
+        <td class="app-details-value">iOS</td>
+    </tr>
+    <tr>
+        <td class="app-details-field">Key</td>
+        <td class="app-details-value">{{currentApplication.id}}</td>
+    </tr>
+    <!--<tr>  not yet need for sprint 1
+        <td>&nbsp;</td>
+        <td>
+            <input type="button" value="Delete" class="btn" ng-click="deleteApp()">
+            <input type="button" value="Edit" class="btn btn-warning" onClick="edit_app()">
+        </td>
+    </tr>-->
+    </tbody>
+</table>
